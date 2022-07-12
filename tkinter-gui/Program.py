@@ -1,5 +1,5 @@
 from tkinter import *
-
+import tkinter.messagebox
 root = Tk()
 root.title("My GUI")
 
@@ -14,13 +14,21 @@ def showWindow():
     Window.geometry("500x300")
     Window.mainloop()
 
+def aboutProgram():
+    tkinter.messagebox.showinfo("รายละเอียด","Pinzaa deverloper")
+
+def exitProgram():
+    confrim = tkinter.messagebox.askquestion("ยืนยัน","คุณต้องการปิดโปรแกรมหรือไม่ ?")
+    if confrim == "yes":
+        root.destroy()
+
 # เพิ่มเมนูย่อย
 menuitem = Menu()
 menuitem.add_command(label="New window",command = showWindow)
 menuitem.add_command(label="Open File")
 menuitem.add_command(label="Save File")
-menuitem.add_command(label="About File")
-menuitem.add_command(label="Exit File")
+menuitem.add_command(label="About File",command=aboutProgram)
+menuitem.add_command(label="Exit File",command=exitProgram)
 
 # เพิ่มเมนูหลัก
 myMenu.add_cascade(label="File",menu=menuitem)
