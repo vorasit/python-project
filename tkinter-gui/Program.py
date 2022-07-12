@@ -1,5 +1,7 @@
 from tkinter import *
 import tkinter.messagebox
+from tkinter.colorchooser import *
+from tkinter.filedialog import *
 root = Tk()
 root.title("My GUI")
 
@@ -63,8 +65,38 @@ def openWindow():
 btn1 = Button(root,text="บันทึก",fg="white",bg="red",command=showMessage).pack()
 btn2 = Button(root,text="เปิดรายงาน",fg="white",bg="green",command=openWindow).pack()
 
+def selectColor():
+    color = askcolor()
+    myLabel = Label(text="hello python",bg=color[1]).pack()
+    
+btn3 = Button(text="เลือกสี",command=selectColor).pack()
+
+def selectFile():
+    fileopen = askopenfilename()
+    fileContent = open(fileopen,encoding="utf-8")
+    myLabel = Label(text=fileContent.read()).pack()
+
+btn4 = Button(text="เลือกไฟล์",command=selectFile).pack()
 
 
+def showChoice():
+    choice = language.get()
+    print(choice)
+    if choice == 1:
+        tkinter.messagebox.showinfo("แจ้งเตือน","คุณเลือกภาษา Python")
+    elif choice == 2:
+        tkinter.messagebox.showinfo("แจ้งเตือน","คุณเลือกภาษา Java")
+    elif choice == 1:
+        tkinter.messagebox.showinfo("แจ้งเตือน","คุณเลือกภาษา PHP")
+    else:
+        tkinter.messagebox.showinfo("แจ้งเตือน","คุณเลือกภาษา C")
+#เพิ่มตัวเลือกในโปรแกรม
+language = IntVar()
+language.set(1)
+Radiobutton(text="Python",variable=language,value=1,command=showChoice).pack()
+Radiobutton(text="Java",variable=language,value=2,command=showChoice).pack()
+Radiobutton(text="PHP",variable=language,value=3,command=showChoice).pack()
+Radiobutton(text="C",variable=language,value=4,command=showChoice).pack()
 #กำหนดขนาดหน้าจอและตำเเหน่งหน้าจอ
 root.geometry("600x500+100+400")# w*h+x+y
 
