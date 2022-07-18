@@ -1,20 +1,30 @@
 class Employee:
-    
 
     # method
-
-    def detail(self):
+    def detail(self,name,salary,department):
         print("เรียกใช้งาน method class Employee")
-        self.name = "pin"
-        self.salary = 200000
+        self.name = name
+        self.salary = salary
+        self.department = department
         print("success define attribute")
+        
+    def showData(self):
         print("name = {}".format(self.name))
         print("salary = {}".format(self.salary))
+        print("department = {}".format(self.department))
 
 # object
-emp1 = Employee()
-emp1.detail()
+obj1 = Employee()
+obj1.detail("pin",200000,"programer")
+obj1.showData()
 
+obj2 = Employee()
+obj2.detail("parn",100000,"ceo")
+obj2.showData()
+
+obj3 = Employee()
+obj3.detail("pook",20000,"boy")
+obj3.showData()
 
 # function
 def employee():
