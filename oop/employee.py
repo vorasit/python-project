@@ -47,3 +47,6 @@ class Employee:
 
     def getDepartment(self):
         return self.__department
+
+    def __introduce__(self):
+        return ("สวัสดีครับผมชือ {}  ทำงานตำแหน่ง = {} ".format(self.__name,self.__department))
