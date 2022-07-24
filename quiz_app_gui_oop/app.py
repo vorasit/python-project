@@ -1,5 +1,6 @@
 from question import Question
 from data import question_data
+from controller import Controller
 
 all_question = []
 """
@@ -13,7 +14,15 @@ for item in question_data:
     question = Question(text, answer)
     all_question.append(question)
 
+print(all_question)
 
+controller = Controller(all_question)
+
+while controller.hasQuestion():
+    controller.nextQuestion()
+
+"""
 print(all_question[0].text)
 print(all_question[1].text)
 print(all_question[2].text)
+"""
