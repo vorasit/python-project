@@ -1,2 +1,10 @@
 python --version
 pip list
+
+mkdir myproject
+cd myproject
+py -3 -m venv venv
+venv\Scripts\activate
+pip install Flask
+
+https://flask.palletsprojects.com/en/2.1.x/installation/
