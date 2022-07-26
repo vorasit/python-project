@@ -19,5 +19,5 @@ print(all_question[0].text)
 
 controller = Controller(all_question)
 
-userInterface = UserInterface()
+userInterface = UserInterface(controller)
 

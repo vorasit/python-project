@@ -1,8 +1,12 @@
 from tkinter import *
-THEME_APP = '#375362'
+from controller import Controller
 
+THEME_APP = "#375362" 
 class UserInterface:
-    def __init__(self):
+    def __init__(self,controller:Controller):
+        self.controller = controller
+
+
         #หน้าต่างโปรแกรม
         self.window = Tk()
         self.window.title("โปรแกรมทำข้อสอบ")
@@ -19,14 +23,25 @@ class UserInterface:
 
         #ปุ่มตัวเลือกตอบคำถาม
         true_image = PhotoImage(file="images/check.png")
-        self.true_button=Button(image=true_image)
+        self.true_button=Button(image=true_image,command=self.true_pressed)
         self.true_button.grid(row=2,column=1)
 
         false_image = PhotoImage(file="images/remove.png")
-        self.false_button=Button(image=false_image)
+        self.false_button=Button(image=false_image,command=self.false_pressed)
         self.false_button.grid(row=2,column=2)
 
-
+        self.get_next_question()
 
         self.window.mainloop()
 
+    def get_next_question(self):
+        q_text = self.controller.nextQuestion()
+        self.canvas.itemconfig(self.question_text,text=q_text)
+
+    def true_pressed(self):
+        self.controller.checkAnswer("true")
+        
+    
+    def false_pressed(self):
+        self.controller.checkAnswer("false")
+        
