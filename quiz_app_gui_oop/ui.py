@@ -35,13 +35,24 @@ class UserInterface:
         self.window.mainloop()
 
     def get_next_question(self):
-        q_text = self.controller.nextQuestion()
-        self.canvas.itemconfig(self.question_text,text=q_text)
+        if self.controller.hasQuestion():
+            q_text = self.controller.nextQuestion()
+            self.scoreLabel.config(text = f"คะเเนน : {self.controller.score}")
+            self.canvas.itemconfig(self.question_text,text=q_text)
+        else:
+            self.canvas.itemconfig(self.question_text,text='สินสุดการทำข้อสอบ')
+            self.scoreLabel.config(text = f"คะเเนน : {self.controller.score}")
+            self.true_button.config(state="disabled")
+            self.false_button.config(state="disabled")
 
     def true_pressed(self):
         self.controller.checkAnswer("true")
+        self.waitNextQuestion()
         
     
     def false_pressed(self):
         self.controller.checkAnswer("false")
+        self.waitNextQuestion()
         
+    def waitNextQuestion(self):
+        self.window.after(1000,self.get_next_question)
