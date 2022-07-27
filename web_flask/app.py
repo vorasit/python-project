@@ -14,7 +14,13 @@ def about():
 def profile():
     return "<h1> สวัสดีครับ Admin  </h1>"
 
+@app.route('/user/<name>/<age>')
+def member(name,age):
+    return "ชื่อ : {} , อายุ : {} ".format(name,age)
+
+
+
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
