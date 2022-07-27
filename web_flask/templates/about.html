@@ -10,12 +10,10 @@
     </head>
     <body>
         <h1> ยินดีต้อนรับเข้าสู่ about  </h1>
-        <img src="../static/pic1.png" alt="">
         <ul>
-            <li> <a href="/"> Home </a> </li>
-            <li> <a href="/about"> about  </a> </li>
-            <li> <a href="/admin"> admin </a> </li>
-
+        {% for item in myproducts %}
+            <li>{{item}}</li>
+        {% endfor %}
         </ul>
         <script src="" async defer></script>
     </body>

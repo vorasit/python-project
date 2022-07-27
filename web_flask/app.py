@@ -9,13 +9,13 @@ def index():
 
 @app.route('/about')
 def about():
-    return render_template("about.html")
+    products = ["เสื้อผ้า","เตารีด","ผ้าห่ม","ยาสามัญ"]
+    return render_template("about.html",myproducts = products)
 
 @app.route('/admin')
 def profile():
-    name = "pinzaa"
-    age = 26
-    return render_template("admin.html",myname = name, myage = age)
+    username = "pin"
+    return render_template("admin.html", username = username)
 
 @app.route('/user/<name>/<age>')
 def member(name,age):

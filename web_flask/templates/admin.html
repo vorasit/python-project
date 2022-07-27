@@ -9,16 +9,19 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <h1> ยินดีต้อนรับเข้าสู่ admin  </h1>
-        <h1> hello : {{myname}}</h1>
-        <h1>age : {{myage}}</h1>
-        <img src="../static/pic2.png" alt="">
-        <ul>
-            <li> <a href="/"> Home </a> </li>
-            <li> <a href="/about"> about  </a> </li>
-            <li> <a href="/admin"> admin </a> </li>
+        
+        {% if username == "pin" %}
+            <h1> ยินดีต้อนรับเข้าสู่ admin  </h1>
+            <img src="../static/pic2.png" alt="">
+        {% else %}
+            <h1> คุณไม่ใช่ Admin </h1>
+            <p>please come back</p>
+            <ul>
+                <li> <a href="/"> Home </a> </li>
+                <li> <a href="/about"> about  </a> </li>
+                <li> <a href="/admin"> admin </a> </li>
+            </ul>
 
-        </ul>
-        <script src="" async defer></script>
+        {% endif %}
     </body>
 </html>
