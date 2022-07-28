@@ -4,6 +4,7 @@
         {% if username == "pin" %}
             <h1> ยินดีต้อนรับเข้าสู่ admin  </h1>
             <img src="../static/pic2.png" alt="">
+            <a href="{{url_for('static',filename='pic1.png')}}">ดูภาพ</a>
         {% else %}
             <h1> คุณไม่ใช่ Admin </h1>
             <p>please come back</p>
