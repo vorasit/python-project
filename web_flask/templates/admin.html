@@ -1,19 +1,19 @@
 {% extends 'layout.html' %}
 {% block content  %}
         
-        {% if username == "pin" %}
-            <h1> ยินดีต้อนรับเข้าสู่ admin  </h1>
-            <img src="../static/pic2.png" alt="">
-            <a href="{{url_for('static',filename='pic1.png')}}">ดูภาพ</a>
-        {% else %}
-            <h1> คุณไม่ใช่ Admin </h1>
-            <p>please come back</p>
-            <ul>
-                <li> <a href="/"> Home </a> </li>
-                <li> <a href="/about"> about  </a> </li>
-                <li> <a href="/admin"> admin </a> </li>
-            </ul>
-
-        {% endif %}
+    <div class="container">
+        <h1>แบบฟอร์มสำหรับ admin</h1>
+        <form action="{{url_for('signupForm')}}" method="GET">
+            <div class="form-group">
+                <label for="">ชื่อผู้ติดต่อ</label>
+                <input type="text" name="fname" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">รายละเอียด</label>
+                <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value="ส่งข้อมูล" class="btn btn-success">
+        </form>
+    </div>
 
 {% endblock  %}

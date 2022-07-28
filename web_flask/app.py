@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 
 app = Flask(__name__)
 
@@ -21,7 +21,11 @@ def profile():
 def member(name,age):
     return "ชื่อ : {} , อายุ : {} ".format(name,age)
 
-
+@app.route('/sendData')
+def signupForm():
+    fname = request.args.get('fname')
+    description = request.args.get('description')
+    return render_template("thankyou.html",data={"name":fname,"description":description})
 
 
 if __name__ == "__main__":
