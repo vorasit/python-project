@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content  %}
+    <div class="container my-2"> 
+        <form  method="POST">
+            {{form.hidden_tag()}}
+            {{form.name.label}}
+            {{form.name()}}
+            
+
+            <br>
+            {{form.isAccept()}}{{form.isAccept.label}}
+            <br>
+            {{form.gender.label}}
+            {{form.gender}}
+            <br>
+            {{form.skill.label}}
+            {{form.skill}}
+            <br>
+            {{form.address.label}} <br>
+            {{form.address}}
+            <br>
+            {{form.submit()}}
+        </form>
+    </div>   
+    <hr>
+    {% if session['name'] %}
+        ชื่อคือ {{session['name']}} <br>
+        ยอมรับบริการหรือไม่? {{session['isAccept']}} <br>
+        เพศ {{session['gender']}} <br>
+        ทักษะ {{session['skill']}} <br>
+        ที่อยู่ {{session['address']}} <br>
+    {% else %}
+        ไม่พบข้อมูล
+    {% endif %}
+
+            
+{% endblock  %}
