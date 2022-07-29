@@ -12,3 +12,6 @@ https://flask.palletsprojects.com/en/2.1.x/installation/
 https://flask-wtf.readthedocs.io/en/1.0.x/
 pip install -U Flask-WTF
 
+https://pythonhosted.org/Flask-Bootstrap/
+pip install flask-bootstrap
+

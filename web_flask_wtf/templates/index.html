@@ -1,4 +1,10 @@
-{% extends 'layout.html' %}
+{% include 'layout.html' %}
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+    ยินดีต้อนรับเข้าสู่หน้าเว็บ
+{% endblock %}
 
 {% block content  %}
     <div class="container my-2"> 
@@ -12,13 +18,13 @@
             {{form.isAccept()}}{{form.isAccept.label}}
             <br>
             {{form.gender.label}}
-            {{form.gender}}
+            {{form.gender()}}
             <br>
             {{form.skill.label}}
-            {{form.skill}}
+            {{form.skill()}}
             <br>
             {{form.address.label}} <br>
-            {{form.address}}
+            {{form.address()}}
             <br>
             {{form.submit()}}
         </form>

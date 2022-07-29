@@ -2,10 +2,11 @@ from flask import Flask,render_template,request,session
 from flask_wtf import FlaskForm, RecaptchaField
 from wtforms import StringField,SubmitField,TextAreaField,BooleanField,RadioField,SelectField
 from wtforms.validators import DataRequired
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mykey'
-
+Bootstrap(app)
 
 class MyForm(FlaskForm):
     name    = TextAreaField('Full Name',validators=[DataRequired()])
