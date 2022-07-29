@@ -1,0 +1,8 @@
+
+
+pip install sqlalchemy
+
+pip install flask-sqlalchemy
+
+db browser for sqlite
+https://sqlitebrowser.org/
