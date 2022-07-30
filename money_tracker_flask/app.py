@@ -20,7 +20,13 @@ class Statement(db.Model):
 
 db.create_all()
 
-@app.route('/')
+#ทำให้มีเครืองหมายคั่นตรงสกุลเงิน
+@app.template_filter()
+def currencyFormat(value):
+    value = float(value)
+    return "{:,.2f}".format(value)
+
+@app.route('/addForm')
 def addForm():
     return render_template("addForm.html")
 
@@ -33,6 +39,18 @@ def addStatement():
     #print("date ",date ," Name ",name ," Amount ",amount," Category ",category)
     statement = Statement(date=date,name=name,amount=amount,category=category)
     db.session.add(statement)
+    db.session.commit()
+    return redirect("/")
+
+@app.route("/")
+def showData():
+    statements = Statement.query.all()
+    return render_template("statements.html",statements=statements)
+
+@app.route("/delete/<int:id>")
+def deleteStatement(id):
+    statement = Statement.query.filter_by(id=id).first()
+    db.session.delete(statement)
     db.session.commit()
     return redirect("/")
 
