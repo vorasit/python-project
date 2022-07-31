@@ -1,0 +1,13 @@
+mkdir myenv
+cd myenv
+py -3 -m venv venv
+venv\Scripts\activate
+
+
+pip install django
+
+สร้างโปรเจค
+django-admin startproject myproject
+
+รัน
+python manage.py runserver
