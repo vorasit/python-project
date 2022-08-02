@@ -11,3 +11,17 @@ django-admin startproject myproject
 
 รัน
 python manage.py runserver
+
+สร้าง app
+python manage.py startapp blogs
+
+อัพโครงสร้างฐานข้อมูล
+python manage.py migrate
+
+pip install mysqlclient
+
+สร้าง user
+python manage.py createsuperuser
+user admin
+password 1234
+
