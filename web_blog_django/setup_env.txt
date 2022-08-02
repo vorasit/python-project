@@ -25,3 +25,5 @@ python manage.py createsuperuser
 user admin
 password 1234
 
+สร้างmodel
+python manage.py makemigrations
