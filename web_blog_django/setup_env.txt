@@ -27,3 +27,5 @@ password 1234
 
 สร้างmodel
 python manage.py makemigrations
+
+python -m pip install Pillow
