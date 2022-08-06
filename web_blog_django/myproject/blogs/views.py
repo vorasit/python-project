@@ -23,3 +23,6 @@ def index(request):
 
     return render(request,"index.html",{'categories':categories,'blogs':blogsPerpage,'lastest':lastest})
 
+def blogDetails(request,id):
+    singleBlog = Blogs.objects.get(id=id)
+    return render(request,"frontend/blogDetail.html",{'blog':singleBlog})
