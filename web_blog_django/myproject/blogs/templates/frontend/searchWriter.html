@@ -4,7 +4,7 @@
 <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
     <div class="page-wrapper">
         <div class="blog-top clearfix">
-            <h4 class="pull-left">บทความทั้งหมด <a href="#"><i class="fa fa-rss"></i></a></h4>
+            <h4 class="pull-left">ผู้เขียน "{{writer}}" <a href="#"><i class="fa fa-rss"></i></a></h4>
         </div><!-- end blog-top -->
 
         <div class="blog-list clearfix">
@@ -24,7 +24,7 @@
                     <p>{{blogs.description}}</p>
                     <small class="firstsmall"><a class="bg-orange" href="{%url 'searchCategory' blogs.category_id %}" title="">{{blogs.category}}</a></small>
                     <small><a href="#" title="">{{blogs.created}}</a></small>
-                    <small><a href="{% url 'searchWriter' blogs.writer %}" title="">by {{blogs.writer}}</a></small>
+                    <small><a href="#" title="{% url 'searchWriter' blogs.writer %}">by {{blogs.writer}}</a></small>
                     <small><a href="#" title=""><i class="fa fa-eye"></i> {{blogs.views |intcomma}}</a></small>
                 </div><!-- end meta -->
             </div><!-- end blog-box -->
@@ -35,18 +35,6 @@
         </div><!-- end blog-list -->
     </div><!-- end page-wrapper -->
     <hr class="invis">
-    <div class="row">
-        <div class="col-md-12">
-            <nav aria-label="Page navigation">
-                {% if blogs.paginator.num_pages > 1 %}
-                <ul class="pagination justify-content-start">
-                    {% for page_number in blogs.paginator.page_range %}
-                    <li class="page-item"><a class="page-link" href="?page={{page_number}}">{{page_number}}</a></li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </nav>
-        </div><!-- end col -->
-    </div><!-- end row -->
+    
 </div><!-- end col -->
 {% endblock %}
