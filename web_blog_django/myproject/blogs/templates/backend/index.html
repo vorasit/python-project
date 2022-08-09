@@ -3,29 +3,29 @@
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-
+        {% load static %}
         <title>Writer Panel</title>
 
         <meta name="robots" content="noindex, nofollow">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
         <!-- Stylesheets -->
         <!-- Bootstrap is included in its original form, unaltered -->
-        <link rel="stylesheet" href="backend/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'backend/css/bootstrap.min.css' %}">
 
         <!-- Related styles of various icon packs and plugins -->
-        <link rel="stylesheet" href="backend/css/plugins.css">
+        <link rel="stylesheet" href="{% static 'backend/css/plugins.css' %}">
 
         <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
-        <link rel="stylesheet" href="backend/css/main.css">
+        <link rel="stylesheet" href="{% static 'backend/css/main.css' %}">
 
         <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
 
         <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
-        <link rel="stylesheet" href="backend/css/themes.css">
+        <link rel="stylesheet" href="{% static 'backend/css/themes.css' %">
         <!-- END Stylesheets -->
 
         <!-- Modernizr (browser feature detection library) -->
-        <script src="backend/js/vendor/modernizr.min.js"></script>
+        <script src="{% static 'backend/js/vendor/modernizr.min.js' %"></script>
     </head>
     <body>
         <div id="page-wrapper">
@@ -46,7 +46,7 @@
                             <div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
                                 <div class="sidebar-user-avatar">
                                     <a href="#">
-                                        <img src="backend/img/placeholders/avatars/avatar2.jpg" alt="avatar">
+                                        <img src="{% static 'backend/img/placeholders/avatars/avatar2.jpg' %}" alt="avatar">
                                     </a>
                                 </div>
                                 <div class="sidebar-user-name">ชื่อนักเขียน</div>
@@ -113,7 +113,7 @@
                             <!-- User Dropdown -->
                             <li class="dropdown">
                                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="backend/img/placeholders/avatars/avatar2.jpg" alt="avatar"> <i class="fa fa-angle-down"></i>
+                                    <img src="{% static 'backend/img/placeholders/avatars/avatar2.jpg' %}" alt="avatar"> <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                     <li class="dropdown-header text-center">บัญชีผู้ใช้</li>
@@ -238,12 +238,12 @@
         <!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
         <a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
         <!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
-        <script src="backend/js/vendor/jquery.min.js"></script>
-        <script src="backend/js/vendor/bootstrap.min.js"></script>
-        <script src="backend/js/plugins.js"></script>
-        <script src="backend/js/app.js"></script>
+        <script src="{% static 'backend/js/vendor/jquery.min.js' %}"></script>
+        <script src="{% static 'backend/js/vendor/bootstrap.min.js' %}"></script>
+        <script src="{% static 'backend/js/plugins.js' %}"></script>
+        <script src="{% static 'backend/js/app.js' %}"></script>
 
-        <script src="backend/js/pages/ecomProducts.js"></script>
+        <script src="{% static 'backend/js/pages/ecomProducts.js' %}"></script>
         <script>$(function(){ EcomProducts.init(); });</script>
     </body>
 </html>
