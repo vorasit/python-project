@@ -1,0 +1,7 @@
+
+
+requests ส่งคำขอเข้าถึงข้อมูลหน้าเว็บ
+pip install requests
+
+beautifulsoup4 ดึงโครงสร้าหน้าเว็บ html
+pip install beautifulsoup4
